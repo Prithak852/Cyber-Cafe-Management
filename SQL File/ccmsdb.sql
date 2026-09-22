@@ -10,15 +10,6 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
---
--- Database: `ccmsdb`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbladmin`
---
 
 CREATE TABLE `tbladmin` (
   `ID` int(10) NOT NULL,
@@ -30,18 +21,11 @@ CREATE TABLE `tbladmin` (
   `AdminRegdate` timestamp NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
---
--- Dumping data for table `tbladmin`
---
+
 
 INSERT INTO `tbladmin` (`ID`, `AdminName`, `UserName`, `MobileNumber`, `Email`, `Password`, `AdminRegdate`) VALUES
 (1, 'Admin', 'admin', 8979555556, 'admin@gmail.com', 'f925916e2754e5e03f75dd58a5733251', '2024-03-30 08:53:46');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `tblcomputers`
---
 
 CREATE TABLE `tblcomputers` (
   `ID` int(10) NOT NULL,
@@ -51,9 +35,6 @@ CREATE TABLE `tblcomputers` (
   `EntryDate` timestamp NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
---
--- Dumping data for table `tblcomputers`
---
 
 INSERT INTO `tblcomputers` (`ID`, `ComputerName`, `ComputerLocation`, `IPAdd`, `EntryDate`) VALUES
 (1, 'Acer', 'Cabin101', '127.0.0.1', '2024-03-31 09:25:58'),
@@ -62,11 +43,6 @@ INSERT INTO `tblcomputers` (`ID`, `ComputerName`, `ComputerLocation`, `IPAdd`, `
 (4, 'DELL', 'Cabin104', '127.0.0.3', '2024-03-31 09:25:58'),
 (5, 'Asus Gaming Laptop', 'Cabin 10', '127.0.0.01', '2024-03-31 09:25:58');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `tblusers`
---
 
 CREATE TABLE `tblusers` (
   `ID` int(10) NOT NULL,
@@ -85,9 +61,7 @@ CREATE TABLE `tblusers` (
   `UpdationDate` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
---
--- Dumping data for table `tblusers`
---
+
 
 INSERT INTO `tblusers` (`ID`, `EntryID`, `UserName`, `UserAddress`, `MobileNumber`, `Email`, `ComputerName`, `IDProof`, `InTime`, `OutTime`, `Fees`, `Remark`, `Status`, `UpdationDate`) VALUES
 (1, '398365517', 'Pushkar Mishra', 'B-120,Govindpuram, Ghaziabad', 4646464646, 'abc@gmail.com', '1', 'EG5866655', '2024-04-03 06:30:01', '2024-04-23 18:13:20', '20', 'Ok', 'Out', '2024-04-23 18:13:20'),
@@ -96,47 +70,26 @@ INSERT INTO `tblusers` (`ID`, `EntryID`, `UserName`, `UserAddress`, `MobileNumbe
 (4, '634737642', 'Test user', 'New Delhi India', 1234567890, 'test@test.com', '1', '184716461', '2024-04-20 07:55:41', '2024-04-23 15:07:13', '30', 'Check out', 'Out', '2024-04-23 15:07:13'),
 (5, '777476809', 'Test Sample', 'K-890, ABC', 9798798789, 'test@gmail.com', '1', 'hj4567', '2024-04-24 04:49:35', NULL, NULL, NULL, '', NULL);
 
---
--- Indexes for dumped tables
---
 
---
--- Indexes for table `tbladmin`
---
 ALTER TABLE `tbladmin`
   ADD PRIMARY KEY (`ID`);
 
---
--- Indexes for table `tblcomputers`
---
+
 ALTER TABLE `tblcomputers`
   ADD PRIMARY KEY (`ID`);
 
---
--- Indexes for table `tblusers`
---
+
 ALTER TABLE `tblusers`
   ADD PRIMARY KEY (`ID`);
 
---
--- AUTO_INCREMENT for dumped tables
---
 
---
--- AUTO_INCREMENT for table `tbladmin`
---
 ALTER TABLE `tbladmin`
   MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
---
--- AUTO_INCREMENT for table `tblcomputers`
---
 ALTER TABLE `tblcomputers`
   MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
---
--- AUTO_INCREMENT for table `tblusers`
---
+
 ALTER TABLE `tblusers`
   MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
